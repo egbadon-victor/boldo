@@ -4,13 +4,13 @@ import NavList from "./NavList";
 
 export default function Header(props) {
   return (
-    <header className="border-2 border-red-600">
+    <div className="my-14">
       <Container>
         <nav className="flex justify-between align-middle">
-          <Logo/>
-          <NavList/>
+          <Logo />
+          <NavList />
         </nav>
       </Container>
-    </header>
+    </div>
   );
 }
