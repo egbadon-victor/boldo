@@ -4,7 +4,7 @@ import NavList from "./NavList";
 
 export default function Header(props) {
   return (
-    <div className="my-14">
+    <div className="mb-14">
       <Container>
         <nav className="flex justify-between align-middle">
           <Logo />

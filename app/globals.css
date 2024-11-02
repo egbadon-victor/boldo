@@ -5,12 +5,12 @@
 :root {
   --primary-color: #0A2640;
   --secondary-color: #65E4A3;
+  --gray-color: #777777;
+  --light-gray-color: #C4C4C4;
 ;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
   font-family: var(--font-secondary);
 }
 
