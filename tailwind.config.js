@@ -8,10 +8,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "var(--primary-color)",
+        primary: {
+          light: "#1C3D5B",
+          DEFAULT: "var(--primary-color)",
+        },
         secondary: "var(--secondary-color)",
         gray: "var(--gray-color)",
-        lightGray: "var(--light-gray-color)"
+        lightGray: "var(--light-gray-color)",
       },
       fontFamily: {
         sans: "var(--secondary-font)",
@@ -31,12 +34,21 @@ module.exports = {
           "0%, 100%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-20px)" },
         },
+        "infinite-scroll": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-100%)" },
+        },
       },
       animation: {
         float: "float 3s ease-in-out infinite",
+        "infinite-scroll": "infinite-scroll 25s linear infinite",
       },
       boxShadow: {
         custom: "0px 4px 32px rgba(0, 0, 0, 0.08)", // 8% opacity is 0.08
+      },
+      backgroundImage: {
+        "custom-gradient":
+          "linear-gradient(90deg, #0A2640 0%, rgba(10, 38, 64, 0.109375) 31.6%, rgba(10, 38, 64, 0) 72.89%, #0A2640 97.87%)",
       },
     },
   },

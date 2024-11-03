@@ -75,22 +75,25 @@ export default function BlogSection(props) {
         </Container>
       </section>
       <section className="py-20">
-        <Container>
-          <div className="relative flex flex-col rounded-xl bg-primary py-16 text-white">
-            <h2 className="mb-8 text-center text-white max-w-[700px] self-center">
-              An enterprise template to ramp up your company website
-            </h2>
+        <Container className="relative z-10">
+          <div className="relative overflow-hidden rounded-xl bg-primary py-16 text-white">
+            <div className="relative z-10 flex flex-col">
+              <h2 className="mb-8 max-w-[700px] self-center text-center text-white">
+                An enterprise template to ramp up your company website
+              </h2>
 
-            <form className="flex justify-center space-x-4">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="w-64 rounded-full px-4 py-3 text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-secondary"
-                required
-              />
+              <form className="flex justify-center space-x-4">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  className="w-full max-w-96 rounded-full px-4 py-3 text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-secondary"
+                  required
+                />
 
-              <Button type="submit" text="Start now" variant="secondary" />
-            </form>
+                <Button type="submit" text="Start now" variant="secondary" lg />
+              </form>
+            </div>
+            <div className="bg-primary-light absolute -right-[500px] -top-[1000px] z-[0] h-[1200px] w-[1200px] animate-float rounded-full" />
           </div>
         </Container>
       </section>

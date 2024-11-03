@@ -6,7 +6,7 @@ export default function Header(props) {
   return (
     <div className="mb-14">
       <Container>
-        <nav className="flex justify-between align-middle">
+        <nav className=" relative flex justify-between align-middle">
           <Logo />
           <NavList />
         </nav>

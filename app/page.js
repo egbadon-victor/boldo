@@ -1,6 +1,4 @@
-import Image from "next/image";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
+import HeaderSection from "./components/HeaderSection";
 import ServicesSection from "./components/ServicesSection";
 import BlogSection from "./components/BlogSection";
 import Footer from "./components/Footer";
@@ -8,10 +6,7 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-      <header className="bg-primary pt-14">
-        <Header />
-        <Hero />
-      </header>
+      <HeaderSection/>
       <ServicesSection />
       <BlogSection />
       <Footer/>
