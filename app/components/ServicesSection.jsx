@@ -20,21 +20,18 @@ import listIcon3 from "../../public/assets/icon/sun.svg";
 export default function ServicesSection(props) {
   const servicesInfo = [
     {
-      id: 1,
       title: "Cool Feature Title",
       description: "Learning curve network effects return on investment.",
       image: serviceCardImg1,
       url: "#",
     },
     {
-      id: 2,
       title: "Even Cooler Feature",
       description: "Learning curve network effects return on investment.",
       image: serviceCardImg2,
       url: "#",
     },
     {
-      id: 3,
       title: "Cool Feature Title",
       description: "Learning curve network effects return on investment.",
       image: serviceCardImg3,
@@ -67,10 +64,10 @@ export default function ServicesSection(props) {
             </p>
           </div>
           <div className="grid grid-cols-3 gap-5">
-            {servicesInfo.map(({ id, title, description, image, url }) => {
+            {servicesInfo.map(({title, description, image, url }, index) => {
               return (
                 <ServiceCard
-                  key={id}
+                  key={index}
                   title={title}
                   description={description}
                   image={image}

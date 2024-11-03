@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function Button({text, variant, outline, lg, className}) {
+export default function Button({text, variant, outline, lg, className, type}) {
     const variantStyles = {
       primary: outline ? "border-primary border-2 bg-transparent text-primary" : "text-white bg-primary",
       secondary: outline ? "border-secondary border-2 bg-transparent text-secondary" : "text-primary bg-secondary",
@@ -16,6 +16,7 @@ export default function Button({text, variant, outline, lg, className}) {
     return (
       <button
         className={`${sizeStyles["lg"]} font-bold  ${variantStyles[variant]} ${className}`}
+        type= {type ||  'button'}
       >
         {text}
       </button>
