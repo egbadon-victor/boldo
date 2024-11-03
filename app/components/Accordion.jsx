@@ -11,7 +11,7 @@ const Accordion = ({ className, items }) => {
   };
 
   return (
-    <div className={`ml-auto w-full max-w-lg space-y-4 ${className}`}>
+    <div className={`md:ml-auto w-full md:max-w-lg space-y-4 ${className}`}>
       {items.map((item, index) => (
         <div key={index} className="border-lightGray border-b">
           <button

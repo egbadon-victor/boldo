@@ -53,35 +53,39 @@ export default function Footer(props) {
   return (
     <section className="py-24">
       <Container>
-        <div className="grid grid-cols-12 gap-8">
-          <div className="col-span-5">
+        <div className="grid grid-cols-12 sm:gap-8">
+          <div className="col-span-12 md:col-span-5">
             <Logo dark className="mb-10" />
-            <p className="mb-16 text-gray max-w-[300px]">
+            <p className="w-full sm:max-w-[300px] text-gray mb-8 sm:mb-0">
               Social media validation business model canvas graphical user
               interface launch party creative facebook iPad twitter.
             </p>
-            <p className="text-gray">All rights reserved.</p>
           </div>
-          <div className="col-span-7 grid grid-cols-9">
-            <div className="col-span-7 flex justify-between">
-              <div>
-                <p className="mb-8 font-bold text-primary">Landings</p>
+          <div className="col-span-12 grid grid-cols-9 md:col-span-7">
+            <div className="col-span-9 flex flex-col justify-between sm:flex-row lg:col-span-7">
+              <div className="mb-10 md:mb-0">
+                <p className="mb-6 font-bold text-primary sm:mb-8">Landings</p>
                 <ul>
                   {landingsList.map(({ name, url }, index) => (
                     <FooterLink key={index} name={name} url={url} />
                   ))}
                 </ul>
               </div>
-              <div>
-                <p className="mb-8 font-bold text-primary">Company</p>
+              <div className="mb-10 md:mb-0">
+                <p className="mb-6 font-bold text-primary sm:mb-8">Company</p>
                 <ul>
                   {companyList.map(({ name, url, hiring }, index) => (
-                    <FooterLink key={index} name={name} url={url} hiring={hiring}/>
+                    <FooterLink
+                      key={index}
+                      name={name}
+                      url={url}
+                      hiring={hiring}
+                    />
                   ))}
                 </ul>
               </div>
-              <div>
-                <p className="mb-8 font-bold text-primary">Resources</p>
+              <div className="mb-10 md:mb-0">
+                <p className="mb-6 font-bold text-primary sm:mb-8">Resources</p>
                 <ul>
                   {resourcesList.map(({ name, url }, index) => (
                     <FooterLink key={index} name={name} url={url} />
@@ -91,6 +95,7 @@ export default function Footer(props) {
             </div>
           </div>
         </div>
+        <p className="text-gray">All rights reserved.</p>
       </Container>
     </section>
   );

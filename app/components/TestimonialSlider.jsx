@@ -1,5 +1,5 @@
 "use client";
-import React, { useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TestimonialCard from "./TestimonialCard";
 import Image from "next/image";
@@ -10,7 +10,28 @@ import "swiper/css";
 
 export default function TestimonialSlider() {
   const swiperRef = useRef(null);
-  const slidesPerView = 3;
+  const [slidesPerView, setSlidesPerView] = useState(3);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 768) {
+        setSlidesPerView(1);
+      } else if (window.innerWidth < 900) {
+        setSlidesPerView(2);
+      } else {
+        setSlidesPerView(3);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add event listener
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener on component unmount
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const testimonials = [
     {
@@ -38,10 +59,10 @@ export default function TestimonialSlider() {
 
   return (
     <div className="grid grid-cols-12 p-6">
-      <h1 className="col-span-8 mb-16 max-w-[700px] text-white">
+      <h1 className="col-span-12 mb-16 max-w-[700px] text-white md:col-span-8">
         An enterprise template to ramp up your company website
       </h1>
-      <div className="col-span-4 mb-16 flex justify-end gap-7">
+      <div className="col-span-12 mb-16 flex justify-end gap-7 md:col-span-4">
         <button
           onClick={() => swiperRef.current?.slidePrev()}
           className="z-10 self-end rounded-full bg-white p-4 shadow-md"
@@ -71,7 +92,7 @@ export default function TestimonialSlider() {
         centeredSlides={true}
         className="col-span-12 w-full"
       >
-        {testimonials.length > slidesPerView
+        {testimonials.length >= 2 * slidesPerView
           ? testimonials.map((testimonial, index) => (
               <SwiperSlide key={index}>
                 <TestimonialCard

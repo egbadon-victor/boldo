@@ -6,12 +6,12 @@ export default function HeaderSection(props) {
     
 
     return (
-      <header className="relative bg-primary pt-14">
-        <div className='relative z-10'>
+      <header className="relative overflow-hidden bg-primary pt-14">
+        <div className="relative z-10">
           <Header />
           <Hero />
         </div>
-        <div className="bg-primary-light absolute -right-[600px] -top-[700px] z-[0] h-[1200px] w-[1200px] rounded-full animate-float"/>
+        <div className="bg-primary-light absolute -right-[700px] -top-[1000px] z-[0] h-[1200px] w-[1200px] animate-float rounded-full md:-right-[600px] md:-top-[700px]" />
       </header>
     );
 }

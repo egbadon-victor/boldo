@@ -55,15 +55,15 @@ export default function ServicesSection(props) {
     <>
       <section className="bg-white py-20">
         <Container>
-          <div className="mb-20 flex flex-col">
+          <div className="mb-16 md:mb-20 flex flex-col">
             <h2 className="font-secondary mb-4 text-center text-xl text-gray">
               Our Services
             </h2>
-            <p className="max-w-[850px] self-center text-center text-5xl leading-[4rem]">
+            <p className="max-w-[850px] self-center text-center text-4xl md:text-5xl leading:[3rem] md:leading-[4rem]">
               Handshake infographic mass market crowdfunding iteration.
             </p>
           </div>
-          <div className="grid grid-cols-3 gap-5">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
             {servicesInfo.map(({title, description, image, url }, index) => {
               return (
                 <ServiceCard
@@ -80,7 +80,7 @@ export default function ServicesSection(props) {
       </section>
       <section className="bg-white py-20">
         <Container>
-          <div className="grid grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-4">
             <div>
               <FloatingImage
                 url="/assets/img/service-section-img-1.png"
@@ -90,7 +90,7 @@ export default function ServicesSection(props) {
               />
             </div>
             <div className="grid grid-cols-12">
-              <div className="col-span-11 col-start-2 flex flex-col justify-center align-middle">
+              <div className="col-span-12 md:col-span-11 md:col-start-2 flex flex-col justify-center align-middle">
                 <h2 className="mb-10">
                   We connect our customers with the best, and help them keep
                   up-and stay open.
@@ -103,14 +103,14 @@ export default function ServicesSection(props) {
                   ].map((text, index) => {
                     return (
                       <li className="mb-6 flex align-middle" key={index}>
-                        <Image className="mr-7" src={bullet} alt="decorative" />
+                        <Image className="mr-5 md:mr-7" src={bullet} alt="decorative" />
                         <p className="self-center text-xl">{text}</p>
                       </li>
                     );
                   })}
                 </ul>
                 <Button
-                  className="self-start"
+                  className="md:self-start"
                   text="Start now"
                   variant="primary"
                   lg
@@ -122,9 +122,9 @@ export default function ServicesSection(props) {
       </section>
       <section className="bg-white pb-20 pt-10">
         <Container>
-          <div className="grid grid-cols-2 gap-4">
-            <div className="grid grid-cols-12">
-              <div className="col-span-11 col-start-2 flex flex-col justify-center align-middle">
+          <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-4">
+            <div className="grid grid-cols-12 order-2 md:order-1">
+              <div className="col-span-12 md:col-span-11 md:col-start-2 flex flex-col justify-center align-middle">
                 <h2 className="mb-16">
                   We connect our customers with the best, and help them keep
                   up-and stay open.
@@ -161,7 +161,7 @@ export default function ServicesSection(props) {
                 </ul>
               </div>
             </div>
-            <div>
+            <div className="order-1 md:order-2">
               <FloatingImage
                 url="/assets/img/service-section-img-2.png"
                 secondaryUrl={serviceSectionSecondaryImg2}
@@ -187,7 +187,7 @@ export default function ServicesSection(props) {
             />
           </div>
 
-          <div className="grid grid-cols-2 max-w-[1100px] mx-auto gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 max-w-[1100px] mx-auto gap-8">
             <h2>
               We connect our customers with the best, and help them keep up-and
               stay open.

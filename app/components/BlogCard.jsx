@@ -10,7 +10,7 @@ export default function BlogCard({
   category,
 }) {
   return (
-    <div className="group mx-auto w-full max-w-[300px]">
+    <div className="group mx-auto w-full sm:max-w-[300px] mb-20">
       <div className="relative aspect-[3/2] w-full mb-6">
         <Image src={imgUrl} fill alt={summary}/>
       </div>

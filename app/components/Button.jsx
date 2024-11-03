@@ -9,7 +9,7 @@ export default function Button({text, variant, outline, lg, className, type}) {
 
     const sizeStyles = {
       lg: lg
-        ? "px-14 py-4 text-xl rounded-[56px]"
+        ? "py-3 px-10 px-14 py-4 text-xl rounded-[56px]"
         : "px-10 py-2 text-base rounded-3xl",
     };
 

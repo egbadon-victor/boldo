@@ -44,11 +44,11 @@ export default function BlogSection(props) {
             <h2 className="font-secondary mb-4 text-center text-xl text-gray">
               Our Blog
             </h2>
-            <p className="max-w-[850px] self-center text-center text-5xl leading-[4rem]">
+            <p className="leading:[3rem] max-w-[850px] self-center text-center text-4xl md:text-5xl md:leading-[4rem]">
               Value proposition accelerator product management venture
             </p>
           </div>
-          <div className="mx-auto mb-20 grid max-w-[1000px] grid-cols-3 gap-5">
+          <div className="mx-auto mb-10 grid max-w-[1000px] grid-cols-1 gap-5 sm:grid-cols-2 md:mb-20 lg:grid-cols-3">
             {blogInfo.map(
               (
                 { url, summary, imgUrl, category, date, author, authorImgUrl },
@@ -76,24 +76,24 @@ export default function BlogSection(props) {
       </section>
       <section className="py-20">
         <Container className="relative z-10">
-          <div className="relative overflow-hidden rounded-xl bg-primary py-16 text-white">
+          <div className="relative overflow-hidden rounded-xl bg-primary px-4 py-16 text-white">
             <div className="relative z-10 flex flex-col">
               <h2 className="mb-8 max-w-[700px] self-center text-center text-white">
                 An enterprise template to ramp up your company website
               </h2>
 
-              <form className="flex justify-center space-x-4">
+              <form className="flex flex-col justify-center md:flex-row md:space-x-4">
                 <input
                   type="email"
                   placeholder="Your email address"
-                  className="w-full max-w-96 rounded-full px-4 py-3 text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-secondary"
+                  className="mb-4 w-full rounded-full px-4 py-4 text-black placeholder:text-black focus:outline-none focus:ring-2 focus:ring-secondary md:mb-0 md:max-w-96"
                   required
                 />
 
                 <Button type="submit" text="Start now" variant="secondary" lg />
               </form>
             </div>
-            <div className="bg-primary-light absolute -right-[500px] -top-[1000px] z-[0] h-[1200px] w-[1200px] animate-float rounded-full" />
+            <div className="bg-primary-light absolute -right-[800px] -top-[1000px] z-[0] h-[1200px] w-[1200px] animate-float rounded-full md:-right-[500px]" />
           </div>
         </Container>
       </section>
