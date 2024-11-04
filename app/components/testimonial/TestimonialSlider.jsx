@@ -3,10 +3,12 @@ import React, { useRef, useState, useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TestimonialCard from "./TestimonialCard";
 import Image from "next/image";
+import Animation from "../animation/Animation";
 
 import arrowLeft from "../../../public/assets/icon/arrow-left.svg";
 
 import "swiper/css";
+import { fadeIn, slideInFromTop } from "@/app/utils/animations";
 
 export default function TestimonialSlider() {
   const swiperRef = useRef(null);
@@ -59,9 +61,14 @@ export default function TestimonialSlider() {
 
   return (
     <div className="grid grid-cols-12 p-6">
-      <h1 className="col-span-12 mb-16 max-w-[700px] text-white md:col-span-8">
-        An enterprise template to ramp up your company website
-      </h1>
+      <Animation
+        className="col-span-12 mb-16 max-w-[700px] md:col-span-8"
+        variants={slideInFromTop()}
+      >
+        <h1 className="text-white">
+          An enterprise template to ramp up your company website
+        </h1>
+      </Animation>
       <div className="col-span-12 mb-16 flex justify-end gap-7 md:col-span-4">
         <button
           onClick={() => swiperRef.current?.slidePrev()}
@@ -82,38 +89,40 @@ export default function TestimonialSlider() {
           />
         </button>
       </div>
-      <Swiper
-        onSwiper={(swiper) => {
-          swiperRef.current = swiper;
-        }}
-        loop={true}
-        spaceBetween={30}
-        slidesPerView={slidesPerView}
-        centeredSlides={true}
-        className="col-span-12 w-full"
-      >
-        {testimonials.length >= 2 * slidesPerView
-          ? testimonials.map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <TestimonialCard
-                  quote={testimonial.quote}
-                  name={testimonial.name}
-                  role={testimonial.role}
-                  imageSrc={testimonial.imageSrc}
-                />
-              </SwiperSlide>
-            ))
-          : [...testimonials, ...testimonials].map((testimonial, index) => (
-              <SwiperSlide key={index}>
-                <TestimonialCard
-                  quote={testimonial.quote}
-                  name={testimonial.name}
-                  role={testimonial.role}
-                  imageSrc={testimonial.imageSrc}
-                />
-              </SwiperSlide>
-            ))}
-      </Swiper>
+      <Animation className="col-span-12 w-full" variants={fadeIn()}>
+        <Swiper
+          onSwiper={(swiper) => {
+            swiperRef.current = swiper;
+          }}
+          loop={true}
+          spaceBetween={30}
+          slidesPerView={slidesPerView}
+          centeredSlides={true}
+          
+        >
+          {testimonials.length >= 2 * slidesPerView
+            ? testimonials.map((testimonial, index) => (
+                <SwiperSlide key={index}>
+                  <TestimonialCard
+                    quote={testimonial.quote}
+                    name={testimonial.name}
+                    role={testimonial.role}
+                    imageSrc={testimonial.imageSrc}
+                  />
+                </SwiperSlide>
+              ))
+            : [...testimonials, ...testimonials].map((testimonial, index) => (
+                <SwiperSlide key={index}>
+                  <TestimonialCard
+                    quote={testimonial.quote}
+                    name={testimonial.name}
+                    role={testimonial.role}
+                    imageSrc={testimonial.imageSrc}
+                  />
+                </SwiperSlide>
+              ))}
+        </Swiper>
+      </Animation>
     </div>
   );
 }

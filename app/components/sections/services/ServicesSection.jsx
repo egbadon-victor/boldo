@@ -6,6 +6,7 @@ import Button from "../../Button";
 import Image from "next/image";
 import TestimonialSlider from "../../testimonial/TestimonialSlider";
 import Accordion from "../../Accordion";
+import Animation from "../../animation/Animation";
 
 import serviceCardImg1 from "../../../../public/assets/img/service-card-img-1.svg";
 import serviceCardImg2 from "../../../../public/assets/img/service-card-img-2.svg";
@@ -16,6 +17,12 @@ import bullet from "../../../../public/assets/icon/bullet.svg";
 import listIcon1 from "../../../../public/assets/icon/leaf.svg";
 import listIcon2 from "../../../../public/assets/icon/eye.svg";
 import listIcon3 from "../../../../public/assets/icon/sun.svg";
+import {
+  slideInFromTop,
+  slideInFromLeft,
+  slideInFromRight,
+  fadeIn,
+} from "@/app/utils/animations";
 
 export default function ServicesSection(props) {
   const servicesInfo = [
@@ -55,19 +62,22 @@ export default function ServicesSection(props) {
     <>
       <section className="bg-white py-20">
         <Container>
-          <div className="mb-16 md:mb-20 flex flex-col">
-            <h2 className="font-secondary mb-4 text-center text-xl text-gray">
-              Our Services
-            </h2>
-            <p className="max-w-[850px] self-center text-center text-4xl md:text-5xl leading:[3rem] md:leading-[4rem]">
-              Handshake infographic mass market crowdfunding iteration.
-            </p>
+          <div className="mb-16 flex flex-col md:mb-20">
+            <Animation variants={slideInFromTop()}>
+              <h2 className="font-secondary mb-4 text-center text-xl text-gray">
+                Our Services
+              </h2>
+              <p className="leading:[3rem] mx-auto max-w-[850px] self-center text-center text-4xl md:text-5xl md:leading-[4rem]">
+                Handshake infographic mass market crowdfunding iteration.
+              </p>
+            </Animation>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
-            {servicesInfo.map(({title, description, image, url }, index) => {
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3">
+            {servicesInfo.map(({ title, description, image, url }, index) => {
               return (
                 <ServiceCard
                   key={index}
+                  index={index}
                   title={title}
                   description={description}
                   image={image}
@@ -80,7 +90,7 @@ export default function ServicesSection(props) {
       </section>
       <section className="bg-white py-20">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-4">
+          <div className="grid grid-cols-1 sm:gap-4 md:grid-cols-2">
             <div>
               <FloatingImage
                 url="/assets/img/service-section-img-1.png"
@@ -90,11 +100,13 @@ export default function ServicesSection(props) {
               />
             </div>
             <div className="grid grid-cols-12">
-              <div className="col-span-12 md:col-span-11 md:col-start-2 flex flex-col justify-center align-middle">
-                <h2 className="mb-10">
-                  We connect our customers with the best, and help them keep
-                  up-and stay open.
-                </h2>
+              <div className="col-span-12 flex flex-col justify-center align-middle md:col-span-11 md:col-start-2">
+                <Animation variants={slideInFromTop()}>
+                  <h2 className="mb-10">
+                    We connect our customers with the best, and help them keep
+                    up-and stay open.
+                  </h2>
+                </Animation>
                 <ul className="mb-14">
                   {[
                     "We connect our customers with the best.",
@@ -102,19 +114,30 @@ export default function ServicesSection(props) {
                     "Business-to-consumer long tail.",
                   ].map((text, index) => {
                     return (
-                      <li className="mb-6 flex align-middle" key={index}>
-                        <Image className="mr-5 md:mr-7" src={bullet} alt="decorative" />
-                        <p className="self-center text-xl">{text}</p>
+                      <li className="mb-6" key={index}>
+                        <Animation
+                          className="flex align-middle"
+                          variants={slideInFromRight(0.8 + index * 0.2)}
+                        >
+                          <Image
+                            className="mr-5 md:mr-7"
+                            src={bullet}
+                            alt="decorative"
+                          />
+                          <p className="self-center text-xl">{text}</p>
+                        </Animation>
                       </li>
                     );
                   })}
                 </ul>
-                <Button
-                  className="md:self-start"
-                  text="Start now"
-                  variant="primary"
-                  lg
-                />
+                <Animation variants={fadeIn(1.5)}>
+                  <Button
+                    className="md:self-start"
+                    text="Start now"
+                    variant="primary"
+                    lg
+                  />
+                </Animation>
               </div>
             </div>
           </div>
@@ -122,9 +145,9 @@ export default function ServicesSection(props) {
       </section>
       <section className="bg-white pb-20 pt-10">
         <Container>
-          <div className="grid grid-cols-1 md:grid-cols-2 sm:gap-4">
-            <div className="grid grid-cols-12 order-2 md:order-1">
-              <div className="col-span-12 md:col-span-11 md:col-start-2 flex flex-col justify-center align-middle">
+          <div className="grid grid-cols-1 sm:gap-4 md:grid-cols-2">
+            <div className="order-2 grid grid-cols-12 md:order-1">
+              <div className="col-span-12 flex flex-col justify-center align-middle md:col-span-11 md:col-start-2">
                 <h2 className="mb-16">
                   We connect our customers with the best, and help them keep
                   up-and stay open.
@@ -145,16 +168,18 @@ export default function ServicesSection(props) {
                     },
                   ].map((item, index) => {
                     return (
-                      <li
-                        className={`${index === 0 ? "bg-primary text-white" : "bg-white"} mb-6 flex rounded-[4px] p-5 align-middle shadow-custom`}
-                        key={index}
-                      >
-                        <Image
-                          className="mr-5"
-                          src={item.icon}
-                          alt="decorative"
-                        />
-                        <p className="self-center text-xl">{item.text}</p>
+                      <li key={index}>
+                        <Animation
+                          className={`${index === 0 ? "bg-primary text-white" : "bg-white"} mb-6 flex rounded-[4px] p-5 align-middle shadow-custom`}
+                          variants={slideInFromLeft(0.8 + index * 0.2)}
+                        >
+                          <Image
+                            className="mr-5"
+                            src={item.icon}
+                            alt="decorative"
+                          />
+                          <p className="self-center text-xl">{item.text}</p>
+                        </Animation>
                       </li>
                     );
                   })}
@@ -180,19 +205,24 @@ export default function ServicesSection(props) {
       <section className="bg-white py-20">
         <Container>
           <div className="relative mx-auto mb-14 aspect-[11/4] w-full max-w-[1100px]">
-            <Image
-              alt="conference image"
-              src="/assets/img/connect-img.png"
-              fill
-            />
+            <Animation variants={fadeIn()}>
+              <Image
+                alt="conference image"
+                src="/assets/img/connect-img.png"
+                fill
+              />
+            </Animation>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 max-w-[1100px] mx-auto gap-8">
+          <div className="mx-auto grid max-w-[1100px] grid-cols-1 gap-8 md:grid-cols-2">
+            <Animation variants={slideInFromLeft()}>
+
             <h2>
               We connect our customers with the best, and help them keep up-and
               stay open.
             </h2>
-            <Accordion items={accordionItems}/>
+            </Animation>
+            <Accordion items={accordionItems} />
           </div>
         </Container>
       </section>

@@ -1,7 +1,10 @@
 import React from "react";
 import Image from "next/image";
+import Animation from "../../animation/Animation";
+import { fadeIn } from "@/app/utils/animations";
 
 export default function BlogCard({
+  index,
   summary,
   imgUrl,
   date,
@@ -10,7 +13,7 @@ export default function BlogCard({
   category,
 }) {
   return (
-    <div className="group mx-auto w-full sm:max-w-[300px] mb-20">
+    <Animation variants={fadeIn(index * 0.2)} className="group mx-auto w-full sm:max-w-[300px] mb-20">
       <div className="relative aspect-[3/2] w-full mb-6">
         <Image src={imgUrl} fill alt={summary}/>
       </div>
@@ -29,6 +32,6 @@ export default function BlogCard({
         />
         <p>{author}</p>
       </div>
-    </div>
+    </Animation>
   );
 }

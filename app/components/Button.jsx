@@ -15,7 +15,7 @@ export default function Button({text, variant, outline, lg, className, type}) {
 
     return (
       <button
-        className={`${sizeStyles["lg"]} font-bold  ${variantStyles[variant]} ${className}`}
+        className={`${sizeStyles["lg"]} font-bold w-full md:w-auto  ${variantStyles[variant]} ${className}`}
         type= {type ||  'button'}
       >
         {text}
