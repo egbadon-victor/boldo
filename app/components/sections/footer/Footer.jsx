@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./Container";
+import Container from "../../Container";
 import FooterLink from "./FooterLink";
-import Logo from "./Logo";
+import Logo from "../../Logo";
 
 export default function Footer(props) {
   const landingsList = [

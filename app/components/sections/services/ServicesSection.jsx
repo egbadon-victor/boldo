@@ -1,21 +1,21 @@
 import React from "react";
-import Container from "./Container";
+import Container from "../../Container";
 import ServiceCard from "./ServiceCard";
-import FloatingImage from "./FloatingImage";
-import Button from "./Button";
+import FloatingImage from "../../FloatingImage";
+import Button from "../../Button";
 import Image from "next/image";
-import TestimonialSlider from "./TestimonialSlider";
-import Accordion from "./Accordion";
+import TestimonialSlider from "../../testimonial/TestimonialSlider";
+import Accordion from "../../Accordion";
 
-import serviceCardImg1 from "../../public/assets/img/service-card-img-1.svg";
-import serviceCardImg2 from "../../public/assets/img/service-card-img-2.svg";
-import serviceCardImg3 from "../../public/assets/img/service-card-img-3.svg";
-import serviceSectionSecondaryImg1 from "../../public/assets/img/service-section-secondary-img-1.svg";
-import serviceSectionSecondaryImg2 from "../../public/assets/img/service-section-secondary-img-2.svg";
-import bullet from "../../public/assets/icon/bullet.svg";
-import listIcon1 from "../../public/assets/icon/leaf.svg";
-import listIcon2 from "../../public/assets/icon/eye.svg";
-import listIcon3 from "../../public/assets/icon/sun.svg";
+import serviceCardImg1 from "../../../../public/assets/img/service-card-img-1.svg";
+import serviceCardImg2 from "../../../../public/assets/img/service-card-img-2.svg";
+import serviceCardImg3 from "../../../../public/assets/img/service-card-img-3.svg";
+import serviceSectionSecondaryImg1 from "../../../../public/assets/img/service-section-secondary-img-1.svg";
+import serviceSectionSecondaryImg2 from "../../../../public/assets/img/service-section-secondary-img-2.svg";
+import bullet from "../../../../public/assets/icon/bullet.svg";
+import listIcon1 from "../../../../public/assets/icon/leaf.svg";
+import listIcon2 from "../../../../public/assets/icon/eye.svg";
+import listIcon3 from "../../../../public/assets/icon/sun.svg";
 
 export default function ServicesSection(props) {
   const servicesInfo = [

@@ -4,7 +4,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import TestimonialCard from "./TestimonialCard";
 import Image from "next/image";
 
-import arrowLeft from "../../public/assets/icon/arrow-left.svg";
+import arrowLeft from "../../../public/assets/icon/arrow-left.svg";
 
 import "swiper/css";
 

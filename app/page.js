@@ -1,15 +1,15 @@
-import HeaderSection from "./components/HeaderSection";
-import ServicesSection from "./components/ServicesSection";
-import BlogSection from "./components/BlogSection";
-import Footer from "./components/Footer";
+import HeaderSection from "./components/sections/header/HeaderSection";
+import ServicesSection from "./components/sections/services/ServicesSection";
+import BlogSection from "./components/sections/blog/BlogSection";
+import Footer from "./components/sections/footer/Footer";
 
 export default function Home() {
   return (
     <>
-      <HeaderSection/>
+      <HeaderSection />
       <ServicesSection />
       <BlogSection />
-      <Footer/>
+      <Footer />
     </>
   );
 }

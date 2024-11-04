@@ -1,12 +1,12 @@
 import React from "react";
-import Button from "./Button";
-import Container from "./Container";
+import Button from "../../Button";
+import Container from "../../Container";
 import Image from "next/image";
+import Dashboard from "../../Dashboard";
 
-import heroGraphics from "../../public/assets/img/hero graphics.svg";
-import logoWall from "../../public/assets/img/logo wall.svg";
-import brandImg1 from "../../public/assets/img/brand-1.svg";
-import brandImg2 from "../../public/assets/img/brand-2.svg";
+import heroGraphics from "../../../../public/assets/img/hero graphics.svg";
+import brandImg1 from "../../../../public/assets/img/brand-1.svg";
+import brandImg2 from "../../../../public/assets/img/brand-2.svg";
 
 export default function Hero(props) {
   return (
@@ -27,12 +27,13 @@ export default function Hero(props) {
               <Button text="Explore" variant="light" outline lg />
             </div>
           </div>
-          <div className="col-span-12  lg:col-span-6 mt-8 sm:mt-0">
+          <div className="col-span-12 mt-8 sm:mt-0 lg:col-span-6">
             <Image className="mx-auto w-full lg:ml-auto" src={heroGraphics} />
+            {/* <Dashboard/> */}
           </div>
         </div>
         <div class="mb-16 inline-flex w-full flex-nowrap [mask-image:_linear-gradient(to_right,transparent_0,_black_40%,_black_calc(100%-40%),transparent_100%)]">
-          <ul class="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8">
+          <ul class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8">
             <li>
               <Image src={brandImg1} alt="boldo" />
             </li>
@@ -53,7 +54,7 @@ export default function Hero(props) {
             </li>
           </ul>
           <ul
-            class="animate-infinite-scroll flex items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
+            class="flex animate-infinite-scroll items-center justify-center md:justify-start [&_img]:max-w-none [&_li]:mx-8"
             aria-hidden="true"
           >
             <li>

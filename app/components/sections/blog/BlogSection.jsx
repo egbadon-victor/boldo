@@ -1,7 +1,7 @@
 import React from "react";
-import Container from "./Container";
+import Container from "../../Container";
 import BlogCard from "./BlogCard";
-import Button from "./Button";
+import Button from "../../Button";
 
 export default function BlogSection(props) {
   const blogInfo = [

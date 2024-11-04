@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from './Link';
+import Link from '../../Link';
 
 export default function ServiceCard({title, description, image, url}) {
     

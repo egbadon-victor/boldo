@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react"; // Add FontAwesome icons for hamburger and close icons
-import Button from "./Button";
+import Button from "../../Button";
 
 const hamburgerIcon = (
   <svg
